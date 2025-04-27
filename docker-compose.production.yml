@@ -19,9 +19,9 @@ services:
   frontend:
     image: debilsalakhov/taski_frontend
     env_file: .env
+    command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
-    command: cp -r /app/build/. /frontend_static/
   gateway:
     image: debilsalakhov/taski_gateway
     env_file: .env

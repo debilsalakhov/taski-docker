@@ -24,6 +24,8 @@ services:
     command: cp -r /app/build/. /frontend_static/
   gateway:
     build: ./gateway/
+    depends_on:
+      - backend
     volumes:
       - static:/staticfiles/
     ports:
